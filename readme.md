@@ -151,3 +151,22 @@ EXPOSE 3000：将容器 3000 端口暴露出来， 允许外部连接这个端�
 后面添加冒号指定tag, 如果不加，则默认tag是latest
 后面的点表示Dockerfile文件所在的位置
 ```
+
+### 发布镜像文件
+
+如果有 `hub.docker.com ` 账号，就可以登陆了
+
+`docker login`
+
+ 为本地 `image` 标注用户名和版本
+
+```docker
+docker image tag koa-demos:0.0.1 skills/hello-world:0.0.1
+```
+
+**发布**
+
+`docker image push [usernam]/[repository]:[tag]`
+
+ok
+
