@@ -2,6 +2,16 @@
 
 [阮一峰--docker](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
 
+## docker 启动
+
+```
+`docker` 如果没有启动, 可以用一下命令启动
+ service 命令用法
+ sudo service docker start
+ systemctl 命令用法
+ sudo systemctl start docker
+```
+
 ## 1. docker 容器和镜像的删除
 
 ### 拉取镜像
