@@ -175,3 +175,8 @@ ok
 ```
 docker container starat [containerId] 用来启动已经生成，已经停止的容器
 ```
+
+```
+docker container exec 进入一个正在运行的容器， 进入容器后就可以使用shell 执行命令了(如果没有 -it 命令参数)
+
+```
