@@ -180,3 +180,10 @@ docker container starat [containerId] 用来启动已经生成，已经停止的
 docker container exec 进入一个正在运行的容器， 进入容器后就可以使用shell 执行命令了(如果没有 -it 命令参数)
 
 ```
+
+```
+docker container cp 命令用于从正在运行的 Docker 容器里面，将文件拷贝到本机
+
+如：
+docker container cp [containID]:[/path/to/file] .
+```
