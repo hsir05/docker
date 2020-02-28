@@ -133,10 +133,21 @@ EXPOSE 3000
 ```
 
 **含义**
-```
+
+```docker
 FROM node:8.4：该 image 文件继承官方的 node image，冒号表示标签，这里标签是8.4，即8.4版本的 node。
 COPY . /app：将当前目录下的所有文件（除了.dockerignore排除的路径），都拷贝进入 image 文件的/app目录。
 WORKDIR /app：指定接下来的工作路径为/app。
 RUN npm install：在/app目录下，运行npm install命令安装依赖。注意，安装后所有的依赖，都将打包进入 image 文件。
 EXPOSE 3000：将容器 3000 端口暴露出来， 允许外部连接这个端口
+```
+
+**创建 `Dockerfile` 文件后，就可以创建  `image` 文件了**
+
+`docker image build -t koa-demo:0.0.1 .`
+
+```
+-t 指定镜像的名称
+后面添加冒号指定tag, 如果不加，则默认tag是latest
+后面的点表示Dockerfile文件所在的位置
 ```
