@@ -2,6 +2,17 @@
 
 [阮一峰--docker](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
 
+## docker 用途
++ 提供一次性的环境
++ 提供弹性的云服务
++ 组建微服务i架构
+
+## docker 安装
+
+[mac](https://docs.docker.com/docker-for-mac/install/)
+
+**`docker version` 或 `docker info`** 命令验证`docker`是否安装成功
+
 ## docker 启动
 
 ```
