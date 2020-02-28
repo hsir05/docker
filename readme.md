@@ -19,6 +19,9 @@
 ```docker
 docker image pull nginx
 
+拉取到镜像后可以用如下命令查看到镜像
+`docker image ls`
+
 ```
 
 ### 1.1 运行容器
@@ -104,4 +107,9 @@ PORTS：镜像程序使用的端口号
 ### 1.6 容器日志
 
 **使用 `docker logs container-name/container-id` 命令 可以查看容器日志信息，指定容器名或者 容器 id 即可**
+
+
+###    `Dockerfile` 文件
+
+**Docker 文件 是一个文本文件，用来配置image， Docker 根据该文件生成二进制的`image` 文件**
 
