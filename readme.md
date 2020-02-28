@@ -170,3 +170,8 @@ docker image tag koa-demos:0.0.1 skills/hello-world:0.0.1
 
 ok
 
+**其他命令**
+
+```
+docker container starat [containerId] 用来启动已经生成，已经停止的容器
+```
