@@ -4,7 +4,7 @@
 
 ## 1. 什么是docker
 
-**Docker 是使用 Go 语言开发的一种 Linux 容器封装，提供简单易用的使用接口，是目前最流行的 Linux 容器解决方案**
+    Docker 是使用 Go 语言开发的一种 Linux 容器封装，提供简单易用的使用接口，是目前最流行的 Linux 容器解决方案
 
 ## 2. docker 用途
 
@@ -16,7 +16,7 @@
 
 1. [mac](https://docs.docker.com/docker-for-mac/install/)
     
-    使用 **`docker version` 或 `docker info`** 命令验证`docker`是否安装成功
+   使用 **`docker version` 或 `docker info`** 命令验证`docker`是否安装成功
 
 ## 4. docker 启动
 
@@ -27,18 +27,18 @@
 
 ## 5. docker镜像
 
-**拉取镜像**
-`docker image pull nginx`
+    **拉取镜像**
+    `docker image pull nginx`
 
-**查看镜像**
-`docker image ls`
+    **查看镜像**
+    `docker image ls`
 
-**删除镜像**
-删除镜像必须是在使用该镜像容器停止的情况下，否则会报错
-`docker image rmi <image ID>`
+    **删除镜像**
+    删除镜像必须是在使用该镜像容器停止的情况下，否则会报错
+    `docker image rmi <image ID>`
 
-**发布镜像文件**
-如果有 `hub.docker.com ` 账号，可以直接登陆 `docker login`, 如果没有，可以去注册个
+    **发布镜像文件**
+    如果有 `hub.docker.com ` 账号，可以直接登陆 `docker login`, 如果没有，可以去注册个
 
 ```docker
 docker image tag imageName:0.0.1 user/hello-world:0.0.1
@@ -73,28 +73,27 @@ docker run --name container-name:tag -d -p 服务器端口:Docker 端口 image-n
 
 **启动容器**
 
-```docker
     命令启动停止运行的容器，同理可以根据 容器名或者 容器 id 进行启动
     docker start container-name/container-id
-```
 
-**获取容器的信息**
-`docker container ls -a`
 
-**获取容器的id**
-`docker container ls -a -p`
+    **获取容器的信息**
+    `docker container ls -a`
 
-**如果容器是运行状态，必须先把容器停止了**
-`docker container stop <container ID>`
+    **获取容器的id**
+    `docker container ls -a -p`
 
-**找到容器对应名字或id进行删除**
-`docker container rm <container ID>`
+    **如果容器是运行状态，必须先把容器停止了**
+    `docker container stop <container ID>`
 
-**批量停止容器:**
-`docker container stop $(docker container ls -a -q)`
+    **找到容器对应名字或id进行删除**
+    `docker container rm <container ID>`
 
-**批量删除容器:**
-`docker container rm $(docker container ls -a -q)`
+    **批量停止容器:**
+    `docker container stop $(docker container ls -a -q)`
+
+    **批量删除容器:**
+    `docker container rm $(docker container ls -a -q)`
 
 **查看容器**
 ```docker
@@ -109,7 +108,7 @@ CONTAINER ID：容器 di
 
 IMAGE：镜像名称:Tag
 
- COMMAND：命令
+COMMAND：命令
 
 CREATES：容器创建的时刻
 
