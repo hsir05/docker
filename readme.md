@@ -2,40 +2,57 @@
 
 [阮一峰--docker](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
 
-## docker 用途
-+ 提供一次性的环境
-+ 提供弹性的云服务
-+ 组建微服务i架构
+## 1. 什么是docker
 
-## docker 安装
+**Docker 是使用 Go 语言开发的一种 Linux 容器封装，提供简单易用的使用接口，是目前最流行的 Linux 容器解决方案**
 
-[mac](https://docs.docker.com/docker-for-mac/install/)
+## 2. docker 用途
 
-**`docker version` 或 `docker info`** 命令验证`docker`是否安装成功
++ 提供一致的开发，测试，生产环境
++ 创建隔离的运行环境
++ 组建微服务架构
 
-## docker 启动
+## 3. docker 安装
 
-```
-`docker` 如果没有启动, 可以用一下命令启动
- service 命令用法
- sudo service docker start
- systemctl 命令用法
- sudo systemctl start docker
-```
+1. [mac](https://docs.docker.com/docker-for-mac/install/)
+    
+    使用 **`docker version` 或 `docker info`** 命令验证`docker`是否安装成功
 
-## 1. docker 容器和镜像的删除
-
-### 拉取镜像
+## 4. docker 启动
 
 ```docker
-docker image pull nginx
-
-拉取到镜像后可以用如下命令查看到镜像
-`docker image ls`
-
+ docke 如果没有启动, 可以用命令启动
+ sudo service docker start
 ```
 
-### 1.1 运行容器
+## 5. docker镜像
+
+**拉取镜像**
+`docker image pull nginx`
+
+**查看镜像**
+`docker image ls`
+
+**删除镜像**
+删除镜像必须是在使用该镜像容器停止的情况下，否则会报错
+`docker image rmi <image ID>`
+
+**发布镜像文件**
+如果有 `hub.docker.com ` 账号，可以直接登陆 `docker login`, 如果没有，可以去注册个
+
+```docker
+docker image tag imageName:0.0.1 user/hello-world:0.0.1
+
+imageName: 镜像名称
+user: 用户名
+0.0.1: tag
+```
+
+**发布**
+`docker image push [usernam]/[repository]:[tag]`
+
+
+## 6. 运行容器
 
 ```docker
 docker run --name container-name:tag -d image-name
@@ -53,50 +70,36 @@ docker run --name container-name:tag -d -p 服务器端口:Docker 端口 image-n
 -p 表示进行服务器与 Docker 容器的端口映射，默认情况下容器中镜像占用的端口是 Docker 容器中的端口与外界是隔绝的，必须进行端口映射才能访问
 ```
 
-**启动成功之后，`ip addr show` 查一下服务器 ip 地址（ 192.168.58.129），然后就能从物理机上访问了**
 
-
-### 1.2 启动容器
+**启动容器**
 
 ```docker
     命令启动停止运行的容器，同理可以根据 容器名或者 容器 id 进行启动
     docker start container-name/container-id
 ```
 
-### 1.3 删除,停止容器
+**获取容器的信息**
+`docker container ls -a`
 
-    **获取容器的信息**
-    `docker container ls -a`
+**获取容器的id**
+`docker container ls -a -p`
 
-    **获取容器的id**
-    `docker container ls -a -p`
+**如果容器是运行状态，必须先把容器停止了**
+`docker container stop <container ID>`
 
-    **如果容器是运行状态，必须先把容器停止了**
-    `docker container stop <container ID>`
+**找到容器对应名字或id进行删除**
+`docker container rm <container ID>`
 
-    **找到容器对应名字或id进行删除**
-    `docker container rm <container ID>`
+**批量停止容器:**
+`docker container stop $(docker container ls -a -q)`
 
-    **批量停止容器:**
-    `docker container stop $(docker container ls -a -q)`
+**批量删除容器:**
+`docker container rm $(docker container ls -a -q)`
 
-    **批量删除容器:**
-    `docker container rm $(docker container ls -a -q)`
-    
-
-### 1.4 删除镜像
-
-**删除镜像的方法和删除容器的方法一样，把`container`换成`image`即可**
-
-**有时候删除镜像会报错，是因为镜像正在被容器使用，停止容器后，移除镜像即可**
-
-
-### 1.5 查看容器
-
+**查看容器**
 ```docker
 docker ps 可以查看运行中的容器
 docker ps -a 可以查看所有容器
-
 ```
 
 **参数说明**
@@ -115,12 +118,12 @@ STATUS：容器当前的状态 (up 表示运行、Exited 表示停止运行)
 PORTS：镜像程序使用的端口号
 ```
 
-### 1.6 容器日志
+## 7. 容器日志
 
 **使用 `docker logs container-name/container-id` 命令 可以查看容器日志信息，指定容器名或者 容器 id 即可**
 
 
-###    `Dockerfile` 文件
+## 8. `Dockerfile` 文件
 
 **Docker 文件 是一个文本文件，用来配置image， Docker 根据该文件生成二进制的`image` 文件**
 
@@ -152,24 +155,6 @@ EXPOSE 3000：将容器 3000 端口暴露出来， 允许外部连接这个端�
 后面的点表示Dockerfile文件所在的位置
 ```
 
-### 发布镜像文件
-
-如果有 `hub.docker.com ` 账号，就可以登陆了
-
-`docker login`
-
- 为本地 `image` 标注用户名和版本
-
-```docker
-docker image tag koa-demos:0.0.1 skills/hello-world:0.0.1
-```
-
-**发布**
-
-`docker image push [usernam]/[repository]:[tag]`
-
-ok
-
 **其他命令**
 
 ```
@@ -195,3 +180,4 @@ Docker Compose是 docker 提供的一个命令行工具，用来定义和运行�
 ```
 **查看版本**
 `docker-compose --version`
+
