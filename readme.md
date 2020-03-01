@@ -117,6 +117,10 @@ STATUS：容器当前的状态 (up 表示运行、Exited 表示停止运行)
 PORTS：镜像程序使用的端口号
 ```
 
+**直接查看容器信息**
+`docker inspect 02277acc3efc`
+
+
 ## 7. `Dockerfile` 文件
 
 **Docker 文件 是一个文本文件，用来配置image， Docker 根据该文件生成二进制的`image` 文件**
