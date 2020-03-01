@@ -198,3 +198,27 @@ services:
 
 使用命令 `docker-compose up info` 就可以将启动起来了
 
+**Volume**
+
++ 可以将容器内和宿主机的某个文件夹进行”绑定“，任何文件改动都会得到同步。所以，我可以将整个站点目录和 数据库 目录都挂载为 Volume。这样，当容器删除时，所有数据文件和源码都会保留。
+
+```
+version: "3.7"
+services:
+    info:
+        container_name: demo
+        image: user/demo:latest
+        ports:
+            - "8081:80"
+        restart: on-failure
++   demo:
++       container_name: demo
++       image: tutum/lamp:latest
++       ports:
++           - "8081:80"
++       volumes:
++           - ./demo/mysql-data:/var/lib/mysql
++           - ./demo/demo:/app
++       restart: on-failure
+
+```
