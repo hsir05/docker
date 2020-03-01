@@ -117,8 +117,13 @@ STATUS：容器当前的状态 (up 表示运行、Exited 表示停止运行)
 PORTS：镜像程序使用的端口号
 ```
 
+**进入容器内部**
+`docker exect -it 02277acc3efc bash`
+
 **直接查看容器信息**
 `docker inspect 02277acc3efc`
+
+`/etc/hosts 下可以看到容器的ip信息等`
 
 
 ## 7. `Dockerfile` 文件
