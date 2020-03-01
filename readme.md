@@ -183,3 +183,18 @@ Docker Compose是 docker 提供的一个命令行工具，用来定义和运行�
 **查看版本**
 `docker-compose --version`
 
+建立一个目录，然后在目录中建立 `docker-compse.yml`, 内容如下，
+
+```zsh
+version: "3.7"
+services:
+    info:
+        container_name: demo
+        image: user/demo:latest
+        ports:
+            - "8081:80"
+        restart: on-failure
+```
+
+使用命令 `docker-compose up info` 就可以将启动起来了
+
