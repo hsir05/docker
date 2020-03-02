@@ -317,7 +317,22 @@
 
     `docker run --name project -p 3000:80 project`
 
+    输入命令 `docker ps` 可以看到运行中容器,如下
+
     <div>
         <img src="./prevew/003.png" width="400px"/>
     </div>
+
+    在浏览器地址栏输入 `0.0.0:3000`, 即可看到页面
+
     至此， 镜像的创建， 容器启动已经ok
+
+5. 镜像发布
+
+    镜像发布前需要登陆, 命令行输入 `docker login`, 输入密码，即可登陆成功
+
+    <div>
+        <img src="./prevew/004.png" width="400px"/>
+    </div>
+
+    `docker image push xxx/project:0.0.1`
