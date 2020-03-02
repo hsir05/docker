@@ -276,3 +276,19 @@
     `yarn serve`
 
     很好 我们的第一步已经完成
+
+---
+
+2. 编写 `Dockerfile` 文件
+
+    ```zsh
+    FROM nginx
+
+    MAINTAINER xxx
+
+    ENV LANG en_US.UTF-8
+
+    COPY ./dist/ /usr/share/nginx/html/
+
+    EXPOSE 80
+    ```
