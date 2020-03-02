@@ -301,5 +301,14 @@
 
     编译
     `yarn build`
+
+    <div>
+        <img src="./prevew/001.png" width="300px"/>
+    </div>
+
     创建镜像
     `docker image build -t project:0.0.1 .`
+
+    <div>
+        <img src="./prevew/002.png" width="300px"/>
+    </div>
