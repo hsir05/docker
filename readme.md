@@ -313,6 +313,8 @@
         <img src="./prevew/002.png" width="400px"/>
     </div>
 
+---
+
 4. 容器创建
 
     `docker run --name project -p 3000:80 project`
@@ -327,6 +329,8 @@
 
     至此， 镜像的创建， 容器启动已经ok
 
+---
+
 5. 镜像发布
 
     镜像发布前需要登陆, 命令行输入 `docker login`, 输入密码，即可登陆成功
@@ -336,3 +340,4 @@
     </div>
 
     `docker image push xxx/project:0.0.1`
+---    
