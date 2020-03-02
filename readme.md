@@ -267,7 +267,7 @@
     ```
 
 
-## 11 例
+## 11. 例
 
 1. 首先初始化一个vue项目并启动
 
@@ -281,6 +281,8 @@
 
 2. 编写 `Dockerfile` 文件
 
+    在项目根目录下新建文件 `Dockerfile`, 写入如下内容
+
     ```zsh
     FROM nginx
 
@@ -292,3 +294,12 @@
 
     EXPOSE 80
     ```
+
+---
+
+3. 创建镜像
+
+    编译
+    `yarn build`
+    创建镜像
+    `docker image build -t project:0.0.1 .`
