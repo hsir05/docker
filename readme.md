@@ -303,12 +303,21 @@
     `yarn build`
 
     <div>
-        <img src="./prevew/001.png" width="300px"/>
+        <img src="./prevew/001.png" width="400px"/>
     </div>
 
     创建镜像
     `docker image build -t project:0.0.1 .`
 
     <div>
-        <img src="./prevew/002.png" width="300px"/>
+        <img src="./prevew/002.png" width="400px"/>
     </div>
+
+4. 容器创建
+
+    `docker run --name project -p 3000:80 project`
+
+    <div>
+        <img src="./prevew/003.png" width="400px"/>
+    </div>
+    至此， 镜像的创建， 容器启动已经ok
