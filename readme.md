@@ -265,3 +265,14 @@
     +       restart: on-failure
 
     ```
+
+
+## 11 例
+
+1. 首先初始化一个vue项目并启动
+
+    `vue create project`
+    `cd project`
+    `yarn serve`
+
+    很好 我们的第一步已经完成
