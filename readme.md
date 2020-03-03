@@ -334,10 +334,28 @@
 5. 镜像发布
 
     镜像发布前需要登陆, 命令行输入 `docker login`, 输入密码，即可登陆成功
-
+    
     <div>
         <img src="./prevew/004.png" width="400px"/>
     </div>
 
-    `docker image push xxx/project:0.0.1`
----    
+    **给镜像打tag**
+
+    镜像如果没有打tag，那就还需要给打tag
+
+    `docker tag nginx:2.2.4 ***/myNginx:0.0.6`
+
+    推送镜像的规范是： `docker push 仓库名/镜像名:镜像版本`
+
+    `docker push xxxx/dmyNginx:0.0.6`
+---
+
+6. docker commit
+
+    使用docker commit 对于修改的容器进行保存
+    ```zsh
+    docker commit  CONTAINER ID docker_hub用户名/镜像名
+
+    docker commit 4567 42345/demo:v3
+    sha256:69d10999af8157dd6e2d0e231a89bd9578ae6148581fbbdd2197
+    ```
