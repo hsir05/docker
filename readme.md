@@ -352,7 +352,8 @@
 
 6. docker commit
 
-    使用docker commit 对于修改的容器进行保存
+    + 使用docker commit 对于修改的容器进行保存
+
     ```zsh
     docker commit  CONTAINER ID docker_hub用户名/镜像名
 
