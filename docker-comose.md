@@ -95,3 +95,36 @@
     –quiet，拉取镜像过程中不打印进度信息
     docker-compose pull
     ```
+12. 重启项目中的服务
+
+    `-t, –timeout TIMEOUT，指定重启前停止容器的超时（默认为10秒`
+    `docker-compose start [SERVICE...]`
+    `docker-compose start`
+    ---
+
+13. 设置指定服务运行的容器个数。通过service=num的参数来设置数量
+
+    `docker-compose scale web=3 db=2`
+    ---
+14. 通过发送SIGKILL信号来强制停止服务容器
+
+    `docker-compose kill -s SIGINT`
+    --
+15. 验证并查看compose文件配置
+
+    `docker-compose config [options]`
+
+    ```zsh
+    –resolve-image-digests 将镜像标签标记为摘要
+    -q, –quiet 只验证配置，不输出。 当配置正确时，不输出任何内容，当文件配置错误，输出错误信息
+    –services 打印服务名，一行一个
+    –volumes 打印数据卷名，一行一个
+    ```
+16. 显示某个容器端口所映射的公共端口
+
+    `docker-compose port`
+
+    ```zsh
+     –protocol=proto，指定端口协议，TCP（默认值）或者UDP
+     –index=index，如果同意服务存在多个容器，指定命令对象容器的序号（默认为1)
+    ```
