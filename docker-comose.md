@@ -65,4 +65,33 @@
     停用移除所有容器以及网络相关
     `docker-compose down`
 
-9. 
+9. 查看服务容器的输出
+    
+    查看服务容器的输出。默认情况下，docker-compose将对不同的服务输出使用不同的颜色来区分。可以通过–no-color来关闭颜色
+
+    `docker-compose log`
+    ---
+10. 构建（重新构建）项目中的服务容器
+
+    `docker-compose build`
+    ---
+    ```zsh
+    –compress 通过gzip压缩构建上下环境
+    –force-rm 删除构建过程中的临时容器
+    –no-cache 构建镜像过程中不使用缓存
+    –pull 始终尝试通过拉取操作来获取更新版本的镜像
+    -m, –memory MEM为构建的容器设置内存大小
+    –build-arg key=val为服务设置build-time变量
+    ```
+11. 拉取服务依赖的镜像
+
+    `docker-compose pull`
+    ---
+    docker-compose pull [options] [SERVICE...]
+    
+    ```zsh
+        –ignore-pull-failures，忽略拉取镜像过程中的错误
+    –parallel，多个镜像同时拉取
+    –quiet，拉取镜像过程中不打印进度信息
+    docker-compose pull
+    ```
