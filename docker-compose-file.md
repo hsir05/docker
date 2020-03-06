@@ -104,3 +104,10 @@ Compose的容器名称格式是： <项目名称> <服务名称> <序号>
 
 `container_name: app`
 
+## 7. net
+
+```zsh
+net: "bridge"
+net: "none"
+net: "host"
+```
