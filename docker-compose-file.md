@@ -219,3 +219,21 @@ networks:
 ```
 docker-compose.yaml文件指定了三个web服务
 
++  启动
+    创建一个webapp目录，将docker-compose.yaml文件拷贝到webapp目录下，使用docker-compose启动应用。
+    `docker-compose up -d`
+
++ 服务访问
+
+    ```zsh
+    http://127.0.0.1:6061
+    http://127.0.0.1:6062
+    http://127.0.0.1:6063
+    ```
+
+
+
+
+
+
+
