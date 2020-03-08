@@ -169,3 +169,53 @@ volumes:
 
   如果不使用宿主机的路径，可以指定一个volume_driver。
   `volume_driver: mydriver`
+
+## 11. 从另一个服务或容器挂载其数据卷
+
+```zsh
+volumes_from:
+   - service_name
+     - container_name
+```
+
+## 例
+
+docker-compose模板文件编写
+docker-compose.yaml文件如下
+
+```zsh
+version: '2'
+services:
+  web1:
+    image: nginx
+    ports: 
+      - "6061:80"
+    container_name: "web1"
+    networks:
+      - dev
+  web2:
+    image: nginx
+    ports: 
+      - "6062:80"
+    container_name: "web2"
+    networks:
+      - dev
+      - pro
+  web3:
+    image: nginx
+    ports: 
+      - "6063:80"
+    container_name: "web3"
+    networks:
+      - pro
+
+networks:
+  dev:
+    driver: bridge
+  pro:
+    driver: bridge
+
+#volumes:
+```
+docker-compose.yaml文件指定了三个web服务
+
